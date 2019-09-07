@@ -1,0 +1,19 @@
+---
+- hosts: linux
+  gather_facts: true
+  tasks:
+  - name: Used disk allocation
+    shell: df -h --output=size,used / |tail -n +2| gawk '{print $1,$2}'
+    register: out
+  
+  - debug:
+     msg: "{{ out }}"
+     
+ # - template:
+ #     line: "{{out.stdout}}"
+ #     dest: ../out.log
+ #     insertafter: EOF
+ #     create: true
+ #     src: ../templates/disks.j2
+ #   delegate_to: localhost
+ #   run_once: true
