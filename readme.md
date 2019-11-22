@@ -16,6 +16,16 @@ clone the repository, master should be the stable version.
 git clone https://github.com/chehabz/ansible-infra-monitoring.git
 ```
 ##
+
+### Windows Setup
+
+If you are using [choco](https://chocolatey.org/install) you can run the following command.
+
+```sh
+choco install vagrant
+```
+
+
 #### Setup your infrastructure locally
 this will setup 2 ubunto instances and 1 windows virtual machine.
 
